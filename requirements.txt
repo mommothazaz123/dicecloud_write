@@ -1,0 +1,6 @@
+meteor-ejson==1.1.0
+pyee==5.0.0
+python-ddp==0.1.5
+python-meteor==0.1.6
+six==1.11.0
+ws4py==0.4.2
