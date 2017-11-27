@@ -20,8 +20,19 @@ USER_ID = client.find_one('users', selector={'username': UNAME}).get('_id')
 print("User ID: " + USER_ID)
 
 
-def make_character():
-    pass
+def main():
+    # check_char()
+    hp_write()
+
+
+def hp_write():
+    def update_callback(error, data):
+        if error:
+            print(error)
+            return
+        print(data)
+    char_id = 'Mtx98jb3c3wWcrWPj'
+    client.update('characters', {'_id': char_id}, {'$set': {"hitPoints.adjustment": -10}}, callback=update_callback)
 
 
 def debug():
@@ -36,6 +47,6 @@ def debug():
 
 
 if __name__ == '__main__':
-    debug()
+    main()
     while True:
         pass
